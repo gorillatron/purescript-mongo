@@ -1,9 +1,10 @@
 module Database.Mongo.Options
-  ( InsertOptions()
+  ( InsertOptions(..)
+  , UpdateOptions(..)
   , defaultInsertOptions
-  , UpdateOptions()
   , defaultUpdateOptions
-  ) where
+  )
+  where
 
 import Data.Maybe (Maybe(..))
 import Database.Mongo.WriteConcern (WriteConcern)
