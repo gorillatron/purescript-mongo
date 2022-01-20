@@ -3,6 +3,7 @@ module Database.Mongo.Options
   , UpdateOptions(..)
   , defaultInsertOptions
   , defaultUpdateOptions
+  , upsertOptions
   )
   where
 
@@ -38,6 +39,13 @@ defaultUpdateOptions = UpdateOptions
   { writeConcern : Nothing
   , journaled    : Just false
   , upsert       : Just false
+  }
+
+upsertOptions :: UpdateOptions
+upsertOptions = UpdateOptions
+  { writeConcern : Nothing
+  , journaled    : Just false
+  , upsert       : Just true
   }
 
 instance encodeJsonUpdateOptions :: WriteForeign UpdateOptions where
